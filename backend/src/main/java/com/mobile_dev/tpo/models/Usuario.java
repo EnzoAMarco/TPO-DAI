@@ -1,19 +1,40 @@
 package com.mobile_dev.tpo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios", schema = "tpo_dai")
 public class Usuario {
+    @Id
+    @Column(name="idusuario")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idUsuario;
 
-    private int idusuario;
+    @Column(name="mail")
     private String mail;
+
+    @Column(name="nickname")
     private String nickname;
+
+    @Column(name="password")
     private String password;
-    private String habilitado; //solo puede ser si o no
+
+    @Column(name="habilitado")
+    private String habilitado;//solo puede ser si o no
+
+    @Column(name="nombre")
     private String nombre;
+
+    @Column(name="direccion")
     private String direccion;
+
+    @Column(name="avatar")
     private String avatar;
+
+    @OneToMany(mappedBy = "idUsuario", fetch = FetchType.EAGER)
+    private List<Receta>recetas;
+
     
 }
