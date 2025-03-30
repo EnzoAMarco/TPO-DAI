@@ -1,10 +1,24 @@
 package com.mobile_dev.tpo.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "conversiones")
 public class Conversion {
-    private int idconversion;
-    private int idunidadorigen;
-    private int idunidaddestino;
-    private float factorconversiones;
-    //constraint fk_unidad_origen foreign key (idUnidadOrigen) references unidades (idUnidad),
-    //constraint fk_unidad_destino foreign key (idUnidadDestino) references unidades (idUnidad)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idconversion")
+    private Long idConversion;
+
+    @ManyToOne
+    @JoinColumn(name = "idunidadorigen")
+    private Long idUnidadOrigen;
+
+    @ManyToOne
+    @JoinColumn(name = "idunidaddestino")
+    private Long idUnidadDestino;
+
+    @Column(name = "factorconversiones")
+    private float factorConversiones;
 }
