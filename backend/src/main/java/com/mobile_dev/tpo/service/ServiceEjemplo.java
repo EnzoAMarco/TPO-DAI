@@ -1,7 +1,9 @@
 package com.mobile_dev.tpo.service;
 
 import com.mobile_dev.tpo.service.Iservice.IEjemplo;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServiceEjemplo implements IEjemplo {
 
     /*
@@ -24,6 +26,11 @@ public class ServiceEjemplo implements IEjemplo {
     public String ejemplo(String txt) {
         //implementacion
         return txt;
+    }
+
+    @Override
+    public String ejemplo2(String txt1) {
+        return null;
     }
 
 }
