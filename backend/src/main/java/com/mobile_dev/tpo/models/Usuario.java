@@ -1,5 +1,10 @@
 package com.mobile_dev.tpo.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "usuarios", schema = "tpo_dai")
 public class Usuario {
 
     private int idusuario;

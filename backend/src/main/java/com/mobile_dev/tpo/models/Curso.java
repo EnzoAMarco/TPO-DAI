@@ -1,5 +1,7 @@
 package com.mobile_dev.tpo.models;
 
+import java.util.List;
+
 public class Curso {
     private int idcurso;
     private String descripcion;
@@ -8,4 +10,5 @@ public class Curso {
     private int duracion;
     private float precio; //decimal(12,2)
     private String modalidad; // 'presencial','remoto','virtual'
+    private List<Alumno> alumnos;
 }
