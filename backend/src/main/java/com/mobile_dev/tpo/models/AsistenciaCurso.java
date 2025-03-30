@@ -1,14 +1,25 @@
 package com.mobile_dev.tpo.models;
 
-import org.springframework.cglib.core.Local;
-
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "asistenciacursos")
 public class AsistenciaCurso {
-    private int idasistencia;
-    private int idalumno;
-    private int idcronograma;
-    private LocalDate fecha; //¿?
-    //constraint fk_asistenciaCursos_alumnos foreign key (idAlumno) references alumnos,
-    //constraint fk_asistenciaCursos_cronograma foreign key (idCronograma) references cronogramaCursos
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idasistencia")
+    private Long idAsistencia;
+
+    @ManyToOne
+    @JoinColumn(name = "idalumno")
+    private Long idAlumno;
+
+    @ManyToOne
+    @JoinColumn(name = "idcronograma")
+    private Long idCronograma;
+
+    @Column(name = "fecha")
+    private LocalDate fecha;
 }

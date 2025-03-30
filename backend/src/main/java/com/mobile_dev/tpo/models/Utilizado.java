@@ -1,23 +1,31 @@
 package com.mobile_dev.tpo.models;
-// ver si tenemos que usar listas
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "utilizados")
 public class Utilizado {
-    private int idutilizado;
-    private int idreceta;
-    private int idingrediente;
-    private int cantidad;
-    private int idunidad;
-    private String obvservaciones; //son comentarios sobre el ingrediente
-    //constraint fk_utilizados_recetas foreign key (idReceta) references recetas,
-    //constraint fk_utilizados_ingredientes foreign key (idIngrediente) references ingredientes,
-    //constraint fk_utilizados_unidades foreign key (idUnidad) references unidades
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idutilizado")
+    private Long idUtilizado;
 
+    @ManyToOne
+    @JoinColumn(name = "idreceta")
+    private Long idReceta;
 
+    @ManyToOne
+    @JoinColumn(name = "idingrediente")
+    private Long idIngrediente;
+
+    @Column(name = "cantidad")
+    private Long cantidad;
+
+    @ManyToOne
+    @JoinColumn(name = "idunidad")
+    private Long idUnidad;
+
+    @Column(name = "observaciones")
+    private String observaciones;
 }
-
-
-
-
-
-

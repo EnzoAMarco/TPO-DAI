@@ -11,6 +11,4 @@ public class Receta {
     private int porciones;
     private int cantidadpersonas;
     private int idtipo;
-
-
 }

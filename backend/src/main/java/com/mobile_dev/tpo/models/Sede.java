@@ -1,14 +1,40 @@
 package com.mobile_dev.tpo.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "sedes")
 public class Sede {
-    private int idsede;
-    private String nombresede;
-    private String direccionsede;
-    private String telefonosede;
-    private String mailsede;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idsede")
+    private Long idSede;
+
+    @Column(name = "nombresede")
+    private String nombreSede;
+
+    @Column(name = "direccionsede")
+    private String direccionSede;
+
+    @Column(name = "telefonosede")
+    private String telefonoSede;
+
+    @Column(name = "mailsede")
+    private String mailSede;
+
+    @Column(name = "whatsapp")
     private String whatsapp;
-    private String tipobonificacion;
-    private float bonificacioncursos; //decimal(10,2)
-    private String tipopromocion;
-    private float promocioncursos; //decimal(10,2)
+
+    @Column(name = "tipobonificacion")
+    private String tipoBonificacion;
+
+    @Column(name = "bonificacioncursos")
+    private float bonificacionCursos;
+
+    @Column(name = "tipopromocion")
+    private String tipoPromocion;
+
+    @Column(name = "promocioncursos")
+    private float promocionCursos;
 }

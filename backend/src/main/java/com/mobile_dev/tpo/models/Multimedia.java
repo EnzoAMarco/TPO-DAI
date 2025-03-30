@@ -1,11 +1,26 @@
 package com.mobile_dev.tpo.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "multimedia")
 public class Multimedia {
-    private int idcontenido;
-    //one to many
-    private int idpaso;
-    private String tipo_contenido; //solo puede ser: 'foto','video','audio'
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idcontenido")
+    private Long idContenido;
+
+    @ManyToOne
+    @JoinColumn(name = "idpaso")
+    private Long idPaso;
+
+    @Column(name = "tipo_contenido")
+    private String tipoContenido;
+
+    @Column(name = "extension")
     private String extension;
-    private String urlcontenido;
-    //constraint fk_multimedia_pasos foreign key (idPaso) references pasos
+
+    @Column(name = "urlcontenido")
+    private String urlContenido;
 }
