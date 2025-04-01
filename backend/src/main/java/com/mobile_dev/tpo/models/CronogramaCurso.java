@@ -1,11 +1,16 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name = "cronogramacursos")
+@Getter
+@Setter
 public class CronogramaCurso {
 
     @Id
@@ -32,4 +37,7 @@ public class CronogramaCurso {
 
     @OneToMany(mappedBy = "cronogramaCurso", fetch = FetchType.EAGER)
     private List<AsistenciaCurso> asistenciaCursos;
+
+    public CronogramaCurso() {
+    }
 }

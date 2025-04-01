@@ -1,9 +1,13 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "multimedia")
+@Getter
+@Setter
 public class Multimedia {
 
     @Id
@@ -23,4 +27,7 @@ public class Multimedia {
 
     @Column(name = "urlcontenido")
     private String urlContenido;
+
+    public Multimedia() {
+    }
 }

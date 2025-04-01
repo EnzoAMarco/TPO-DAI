@@ -1,10 +1,16 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "asistenciacursos")
+@Getter
+@Setter
+
 public class AsistenciaCurso {
 
     @Id
@@ -22,4 +28,7 @@ public class AsistenciaCurso {
 
     @Column(name = "fecha")
     private LocalDate fecha;
+
+    public AsistenciaCurso() {
+    }
 }

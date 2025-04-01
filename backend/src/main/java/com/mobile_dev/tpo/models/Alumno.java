@@ -1,11 +1,15 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "alumnos", schema = "tpo_dai")
+@Getter
+@Setter
 public class Alumno {
     //idalumno seria tanto la clave primaria como la foranea y se haria one to one , ver si se puede hacer o preguntarle al profe
 
@@ -44,4 +48,8 @@ public class Alumno {
     @OneToMany(mappedBy = "alumno", fetch = FetchType.EAGER)
     private List<AsistenciaCurso> asistenciaCursos;
 
+
+    public Alumno() {
+    }
 }
+

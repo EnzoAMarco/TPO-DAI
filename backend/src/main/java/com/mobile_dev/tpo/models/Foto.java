@@ -1,9 +1,13 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "fotos")
+@Getter
+@Setter
 public class Foto {
 
     @Id
@@ -20,4 +24,7 @@ public class Foto {
 
     @Column(name = "extension")
     private String extension;
+
+    public Foto() {
+    }
 }

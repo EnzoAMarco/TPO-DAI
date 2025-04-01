@@ -1,11 +1,15 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "pasos")
+@Getter
+@Setter
 public class Paso {
 
     @Id
@@ -25,4 +29,7 @@ public class Paso {
 
     @OneToMany(mappedBy = "paso", fetch = FetchType.EAGER)
     private List<Multimedia> multimedia;
+
+    public Paso() {
+    }
 }

@@ -1,11 +1,15 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "ingredientes")
+@Getter
+@Setter
 public class Ingrediente {
 
     @Id
@@ -18,5 +22,8 @@ public class Ingrediente {
 
     @OneToMany(mappedBy = "ingrediente", fetch = FetchType.EAGER)
     private List<Utilizado> utilizados;
+
+    public Ingrediente() {
+    }
 }
 

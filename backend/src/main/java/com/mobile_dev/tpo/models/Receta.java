@@ -1,11 +1,15 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "recetas", schema = "tpo_dai")
+@Getter
+@Setter
 public class Receta {
     //id receta primary key y a su vez es una foranea one to many one estipo de receta y many es id receta
     @Id
@@ -48,6 +52,6 @@ public class Receta {
     @OneToMany(mappedBy = "receta", fetch = FetchType.EAGER)
     private List<Utilizado> utilizados;
 
-
-
+    public Receta() {
+    }
 }

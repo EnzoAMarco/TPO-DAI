@@ -1,9 +1,13 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "calificaciones")
+@Getter
+@Setter
 public class Calificacion {
 
     @Id
@@ -24,4 +28,7 @@ public class Calificacion {
 
     @Column(name = "comentarios")
     private String comentarios;
+
+    public Calificacion() {
+    }
 }

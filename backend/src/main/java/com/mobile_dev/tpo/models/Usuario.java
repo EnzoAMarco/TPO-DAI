@@ -1,11 +1,15 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "usuarios", schema = "tpo_dai")
+@Getter
+@Setter
 public class Usuario {
     @Id
     @Column(name="idusuario")
@@ -41,4 +45,7 @@ public class Usuario {
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Alumno alumno;
+
+    public Usuario() {
+    }
 }

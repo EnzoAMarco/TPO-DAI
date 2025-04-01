@@ -1,9 +1,13 @@
 package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "utilizados")
+@Getter
+@Setter
 public class Utilizado {
 
     @Id
@@ -28,4 +32,8 @@ public class Utilizado {
 
     @Column(name = "observaciones")
     private String observaciones;
+
+    public Utilizado() {
+
+    }
 }
