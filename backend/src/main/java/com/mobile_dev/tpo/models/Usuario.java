@@ -33,8 +33,12 @@ public class Usuario {
     @Column(name="avatar")
     private String avatar;
 
-    @OneToMany(mappedBy = "idUsuario", fetch = FetchType.EAGER)
-    private List<Receta>recetas;
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    private List<Receta>receta;
 
-    
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    private List<Calificacion> calificacion;
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private Alumno alumno;
 }

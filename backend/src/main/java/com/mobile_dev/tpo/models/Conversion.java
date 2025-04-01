@@ -13,11 +13,11 @@ public class Conversion {
 
     @ManyToOne
     @JoinColumn(name = "idunidadorigen")
-    private Long idUnidadOrigen;
+    private Unidad unidadOrigen;
 
     @ManyToOne
     @JoinColumn(name = "idunidaddestino")
-    private Long idUnidadDestino;
+    private Unidad unidadDestino;
 
     @Column(name = "factorconversiones")
     private float factorConversiones;

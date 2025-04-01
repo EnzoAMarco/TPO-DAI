@@ -2,6 +2,7 @@ package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "cronogramacursos")
@@ -14,11 +15,11 @@ public class CronogramaCurso {
 
     @ManyToOne
     @JoinColumn(name = "idsede")
-    private Long idSede;
+    private Sede sede;
 
     @ManyToOne
     @JoinColumn(name = "idcurso")
-    private Long idCurso;
+    private Curso curso;
 
     @Column(name = "fechainicio")
     private LocalDate fechaInicio;
@@ -27,5 +28,8 @@ public class CronogramaCurso {
     private LocalDate fechaFin;
 
     @Column(name = "vacantesdisponibles")
-    private Long vacantesDisponibles;
+    private int vacantesDisponibles;
+
+    @OneToMany(mappedBy = "cronogramaCurso", fetch = FetchType.EAGER)
+    private List<AsistenciaCurso> asistenciaCursos;
 }

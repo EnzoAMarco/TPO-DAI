@@ -2,6 +2,8 @@ package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "sedes")
 public class Sede {
@@ -37,4 +39,7 @@ public class Sede {
 
     @Column(name = "promocioncursos")
     private float promocionCursos;
+
+    @OneToMany(mappedBy = "sede", fetch = FetchType.EAGER)
+    private List<CronogramaCurso> cronogramaCursos;
 }

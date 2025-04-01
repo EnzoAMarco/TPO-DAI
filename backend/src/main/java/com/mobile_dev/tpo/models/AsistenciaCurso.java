@@ -14,11 +14,11 @@ public class AsistenciaCurso {
 
     @ManyToOne
     @JoinColumn(name = "idalumno")
-    private Long idAlumno;
+    private Alumno alumno;
 
     @ManyToOne
     @JoinColumn(name = "idcronograma")
-    private Long idCronograma;
+    private CronogramaCurso cronogramaCurso;
 
     @Column(name = "fecha")
     private LocalDate fecha;

@@ -13,11 +13,11 @@ public class Calificacion {
 
     @ManyToOne
     @JoinColumn(name = "idusuario")
-    private Long idUsuario;
+    private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "idreceta")
-    private Long idReceta;
+    private Receta receta;
 
     @Column(name = "calificacion")
     private Long calificacion;

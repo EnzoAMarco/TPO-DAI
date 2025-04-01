@@ -13,6 +13,11 @@ public class Alumno {
     @Column(name="idalumno")
     private Long idAlumno;
 
+    @OneToOne
+    @MapsId
+    @JoinColumn(name="idalumno")
+    private Usuario usuario;
+
     @Column(name="numerotarjeta")
     private String numeroTarjeta;
 
@@ -31,9 +36,12 @@ public class Alumno {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "alumnoCurso",
-            joinColumns = @JoinColumn(name = "alumnos"),
-            inverseJoinColumns = @JoinColumn(name = "cursos")
+            joinColumns = @JoinColumn(name = "idalumno"),
+            inverseJoinColumns = @JoinColumn(name = "idcurso")
     )
     private List<Curso> cursos;
+
+    @OneToMany(mappedBy = "alumno", fetch = FetchType.EAGER)
+    private List<AsistenciaCurso> asistenciaCursos;
 
 }

@@ -13,7 +13,7 @@ public class Foto {
 
     @ManyToOne
     @JoinColumn(name = "idreceta")
-    private Long idReceta;
+    private Receta receta;
 
     @Column(name = "urlfoto")
     private String urlFoto;

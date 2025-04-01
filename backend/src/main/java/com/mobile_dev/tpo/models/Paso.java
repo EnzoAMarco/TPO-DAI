@@ -2,6 +2,8 @@ package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "pasos")
 public class Paso {
@@ -13,11 +15,14 @@ public class Paso {
 
     @ManyToOne
     @JoinColumn(name = "idreceta", nullable = false)
-    private Long idReceta;
+    private Receta receta;
 
     @Column(name = "urlfoto", length = 300)
     private String urlFoto;
 
     @Column(name = "extension", length = 5)
     private String extension;
+
+    @OneToMany(mappedBy = "paso", fetch = FetchType.EAGER)
+    private List<Multimedia> multimedia;
 }

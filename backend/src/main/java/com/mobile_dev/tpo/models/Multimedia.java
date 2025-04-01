@@ -13,7 +13,7 @@ public class Multimedia {
 
     @ManyToOne
     @JoinColumn(name = "idpaso")
-    private Long idPaso;
+    private Paso paso;
 
     @Column(name = "tipo_contenido")
     private String tipoContenido;

@@ -13,18 +13,18 @@ public class Utilizado {
 
     @ManyToOne
     @JoinColumn(name = "idreceta")
-    private Long idReceta;
+    private Receta receta;
 
     @ManyToOne
     @JoinColumn(name = "idingrediente")
-    private Long idIngrediente;
+    private Ingrediente ingrediente;
 
     @Column(name = "cantidad")
     private Long cantidad;
 
     @ManyToOne
     @JoinColumn(name = "idunidad")
-    private Long idUnidad;
+    private Unidad unidad;
 
     @Column(name = "observaciones")
     private String observaciones;

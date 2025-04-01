@@ -2,6 +2,8 @@ package com.mobile_dev.tpo.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "unidades")
 public class Unidad {
@@ -13,4 +15,14 @@ public class Unidad {
 
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
+
+    @OneToMany(mappedBy = "unidadOrigen", fetch = FetchType.EAGER)
+    private List<Conversion>conversionsOrigen;
+
+    @OneToMany(mappedBy = "unidadDestino", fetch = FetchType.EAGER)
+    private List<Conversion>conversionDestino;
+
+    @OneToMany(mappedBy = "unidad", fetch = FetchType.EAGER)
+    private List<Utilizado> utilizados;
+
 }
